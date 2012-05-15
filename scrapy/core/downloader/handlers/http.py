@@ -21,11 +21,9 @@ class HttpDownloadHandler(object):
         return factory.deferred
 
     def _connect(self, factory):
-        host, port = factory.host, factory.port
-        if factory.scheme == 'https':
-            if ssl_supported:
-                return reactor.connectSSL(host, port, factory, \
-                        self.ClientContextFactory())
-            raise NotSupported("HTTPS not supported: install pyopenssl library")
+        host, port, scheme = factory.host, factory.port, factory.scheme
+        if scheme == 'https':
+            contextfactory = ClientContextFactory()
+            return reactor.connectSSL(host, port, factory, contextfactory)
         else:
             return reactor.connectTCP(host, port, factory)
