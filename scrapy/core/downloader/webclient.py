@@ -136,24 +136,3 @@ class ScrapyHTTPClientFactory(HTTPClientFactory):
     def gotHeaders(self, headers):
         self.headers_time = time()
         self.response_headers = headers
-
-
-
-if 'ssl' in optional_features:
-    from twisted.internet.ssl import ClientContextFactory
-    from OpenSSL import SSL
-else:
-    ClientContextFactory = object
-
-
-class ScrapyClientContextFactory(ClientContextFactory):
-    "A SSL context factory which is more permissive against SSL bugs."
-    # see https://github.com/scrapy/scrapy/issues/82
-    # and https://github.com/scrapy/scrapy/issues/26
-
-    def getContext(self, hostname, port):
-        ctx = ClientContextFactory.getContext(self)
-        # Enable all workarounds to SSL bugs as documented by
-        # http://www.openssl.org/docs/ssl/SSL_CTX_set_options.html
-        ctx.set_options(SSL.OP_ALL)
-        return ctx
