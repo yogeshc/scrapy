@@ -89,7 +89,7 @@ class _ResponseReader(protocol.Protocol):
 
 class Http11DownloadHandler(object):
 
-    def __init__(self):
+    def __init__(self, settings=None):
         self.debug = False
 
     def download_request(self, request, spider):
