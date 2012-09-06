@@ -151,7 +151,7 @@ class ScrapyClientContextFactory(ClientContextFactory):
     # see https://github.com/scrapy/scrapy/issues/82
     # and https://github.com/scrapy/scrapy/issues/26
 
-    def getContext(self):
+    def getContext(self, hostname, port):
         ctx = ClientContextFactory.getContext(self)
         # Enable all workarounds to SSL bugs as documented by
         # http://www.openssl.org/docs/ssl/SSL_CTX_set_options.html
