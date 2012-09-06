@@ -95,8 +95,7 @@ class ScrapyAgent(object):
         return respcls(url=url, status=status, headers=headers, body=body)
 
     def _agentrequest_failed(self, failure, request):
-        # be clear it is an HTTP failure with new downloader
-        log.err(failure, 'HTTP11 failure: %s' % request)
+        # Let the user-configure logging take care of the failure
         return failure
 
 
