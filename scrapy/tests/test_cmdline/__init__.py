@@ -1,7 +1,7 @@
 import sys
 import os
 from subprocess import Popen, PIPE
-import unittest
+from django.utils import unittest
 
 from scrapy.utils.test import get_pythonpath
 
