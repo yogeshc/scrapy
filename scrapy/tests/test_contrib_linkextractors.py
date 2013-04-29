@@ -1,5 +1,5 @@
 import re
-import unittest
+from django.utils import unittest
 
 from scrapy.http import HtmlResponse
 from scrapy.link import Link
