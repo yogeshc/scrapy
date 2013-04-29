@@ -1,4 +1,4 @@
-import unittest
+from django.utils import unittest
 
 from scrapy.contrib.downloadermiddleware.redirect import RedirectMiddleware
 from scrapy.spider import BaseSpider
