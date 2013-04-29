@@ -1,4 +1,4 @@
-import unittest
+from django.utils import unittest
 
 from scrapy.contrib.loader import ItemLoader, XPathItemLoader
 from scrapy.contrib.loader.processor import Join, Identity, TakeFirst, \
