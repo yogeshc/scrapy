@@ -1,4 +1,5 @@
-import unittest, json, cPickle as pickle
+from django.utils import unittest
+import json, cPickle as pickle
 from cStringIO import StringIO
 
 from scrapy.item import Item, Field
