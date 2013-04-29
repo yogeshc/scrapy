@@ -1,4 +1,4 @@
-import unittest
+from django.utils import unittest
 
 from twisted.internet.error import TimeoutError as ServerTimeoutError, DNSLookupError, \
                                    ConnectionRefusedError, ConnectionDone, ConnectError, \
