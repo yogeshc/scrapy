@@ -1,4 +1,5 @@
-import unittest, tempfile, shutil, time
+from django.utils import unittest
+import tempfile, shutil, time
 
 from scrapy.http import Response, HtmlResponse, Request
 from scrapy.spider import BaseSpider
