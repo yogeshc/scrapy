@@ -1,4 +1,4 @@
-import unittest
+from django.utils import unittest
 
 from scrapy.http import Request
 from scrapy.contrib.downloadermiddleware.httpauth import HttpAuthMiddleware
